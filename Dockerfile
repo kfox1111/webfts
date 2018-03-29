@@ -6,7 +6,7 @@ RUN \
   yum install -y webfts mod_ssl && \
   cd /tmp && \
   git clone --depth 1 https://gitlab.cern.ch/fts/webfts.git && \
-  mv webfts/* /var/www/webfts/ && \
+  cp -af webfts/* /var/www/webfts/ && \
   rm -rf /tmp/webfts && \
   yum remove -y git && \
   yum clean all && \
