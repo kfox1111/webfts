@@ -6,8 +6,8 @@ RUN \
   yum install -y webfts mod_ssl && \
   cd /tmp && \
   git clone --depth 1 https://gitlab.cern.ch/fts/webfts.git && \
-  mv webfts.git/* /var/www/webfts/ && \
-  rm -rf /tmp/webfts.git && \
+  mv webfts/* /var/www/webfts/ && \
+  rm -rf /tmp/webfts && \
   yum remove -y git && \
   yum clean all && \
   sed -i 's/Listen 8446/Listen 8444/;/.*Log logs/d; /# Logs/aErrorLog /proc/self/fd/2\nCustomLog /proc/self/fd/1 combined' /etc/httpd/conf.d/webfts.conf
